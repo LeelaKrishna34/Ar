@@ -70,13 +70,13 @@ loader.load("https://immersive-web.github.io/webxr-samples/media/gltf/reticle/re
   scene.add(reticle);
 })
 
-let flower;
+let WatterBottle;
 loader.load("https://github.com/LeelaKrishna34/Ar/blob/main/WaterBottle.gltf", function(gltf) {
-  flower = gltf.scene;
+  WatterBottle = gltf.scene;
 });
 
 session.addEventListener("select", (event) => {
-  if (flower) {
+  if (WaterBottle) {
     const clone = flower.clone();
     clone.position.copy(reticle.position);
     scene.add(clone);
