@@ -60,16 +60,30 @@ async function activateXR() {
 
   const loader = new THREE.GLTFLoader();
   let reticle;
-  loader.load("https://immersive-web.github.io/webxr-samples/media/gltf/reticle/reticle.gltf", function(gltf) {
-    reticle = gltf.scene;
-    reticle.visible = false;
-    scene.add(reticle);
-  });
+  loader.load(
+    "https://immersive-web.github.io/webxr-samples/media/gltf/reticle/reticle.gltf",
+    function (gltf) {
+      reticle = gltf.scene;
+      reticle.visible = false;
+      scene.add(reticle);
+    },
+    undefined,
+    function (error) {
+      console.error('An error occurred while loading the reticle:', error);
+    }
+  );
 
   let waterBottle;
-  loader.load("https://raw.githubusercontent.com/LeelaKrishna34/Ar/main/controller.gltf", function(gltf) {
-    waterBottle = gltf.scene;
-  });
+  loader.load(
+    "https://raw.githubusercontent.com/LeelaKrishna34/Ar/main/controller.gltf",
+    function (gltf) {
+      waterBottle = gltf.scene;
+    },
+    undefined,
+    function (error) {
+      console.error('An error occurred while loading the water bottle:', error);
+    }
+  );
 
   session.addEventListener("select", (event) => {
     if (waterBottle) {
