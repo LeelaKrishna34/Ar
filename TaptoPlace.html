@@ -64,7 +64,7 @@ const hitTestSource = await session.requestHitTestSource({ space: viewerSpace })
 
 const loader = new THREE.GLTFLoader();
 let reticle;
-loader.load("https://immersive-web.github.io/webxr-samples/media/gltf/reticle/reticle.gltf", function(gltf) {
+loader.load("https://github.com/LeelaKrishna34/Ar/blob/main/reticle.gltf", function(gltf) {
   reticle = gltf.scene;
   reticle.visible = false;
   scene.add(reticle);
